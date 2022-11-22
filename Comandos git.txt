@@ -1,0 +1,43 @@
+ssh -i ssh-key-2022-10-07.key opc@ipdesumaquinavirtual   (nota: ssh-key-2022-10-07.key es el nombre de la llave de su VM)
+yes
+
+sudo dnf install git
+y
+
+sudo dnf install java-11-openjdk-devel
+y
+
+sudo dnf info maven
+
+sudo dnf install maven -y
+
+sudo alternatives --config java
+1
+
+sudo alternatives --config javac
+1
+
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+
+sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
+
+sudo firewall-cmd --reload
+
+
+git clone --branch master hhttps://github.com/GabrielaRojasc/Ciclo-4-UNAB.git
+ls
+
+cd Ciclo-4-UNAB/
+
+mvn clean package -DskipTests
+
+mvn clean package -DskipTests
+ls
+
+cd target/
+ls
+
+java -jar demo-0.0.1-SNAPSHOT.jar
+
+postman http://ipdesumaquinavirtual:8080/api/Category/all
+Plataforma http://ipdesumaquinavirtual:8080
