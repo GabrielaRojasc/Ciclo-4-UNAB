@@ -2,14 +2,11 @@ package com.app.movie.controller;
 
 import com.app.movie.dto.ResponseDto;
 import com.app.movie.entities.Score;
-import com.app.movie.interfaces.IScoreRepository;
 import com.app.movie.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
 
 
 @RestController
@@ -18,30 +15,40 @@ import java.util.Optional;
 public class ScoreController {
 
     @Autowired
-    IScoreRepository repository;
+    ScoreService service;
 
-    public Iterable<Score> getAll(){
-        return repository.findAll();
+    @GetMapping("")
+    public Iterable<Score> get() {
+        return service.get();
     }
 
-    public Optional<Score> findById(String id){
-        Optional<Score> response= repository.findById(id);
-        return response;
+//    @PostMapping("")
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public ResponseDto create(@RequestBody Score request) {
+//       return service.create(request);
+//    }
+    @PostMapping("")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<ResponseDto> create(@RequestBody Score request) {
+        ResponseDto responseDto = service.create(request);
+        ResponseEntity<ResponseDto> responseS = new ResponseEntity<>(responseDto,HttpStatus.CONFLICT);
+
+        if(responseDto.status.booleanValue()==true){
+            responseS = new ResponseEntity<>(responseDto,HttpStatus.CREATED);
+        }
+        return responseS;
+    }
+    @PutMapping("")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Score update(@RequestBody Score request) {
+        return service.update(request);
     }
 
-    public List<Score> getByMoviesAndClient(String name, String email){
-        return repository.getScoreByMoviesAndClient(name, email);
-    }
-    public Boolean existsById(String id){
-        return repository.existsById(id);
-    }
-
-    public void deleteById(String id){
-        repository.deleteById(id);
-    }
-
-    public Score save(Score score){
-        return repository.save(score);
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") String id) {
+        service.delete(id);
     }
 
 }
+
