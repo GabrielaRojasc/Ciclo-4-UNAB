@@ -18,32 +18,30 @@ import org.springframework.web.bind.annotation.*;
 public class ScoreController {
 
     @Autowired
-    ScoreService service;
+    IScoreRepository repository;
 
-    @GetMapping("")
-    public Iterable<Score> get() {
-        return service.get();
+    public Iterable<Score> getAll(){
+        return repository.findAll();
     }
 
-    @PostMapping("")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseDto create(@RequestBody Score request) {
-        if(request.getScore().intValue()>4){
-            System.out.println("mayor a 4");
-        }
-        return service.create(request);
+    public Optional<Score> findById(String id){
+        Optional<Score> response= repository.findById(id);
+        return response;
     }
 
-    @PutMapping("")
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public Score update(@RequestBody Score request) {
-        return service.update(request);
+    public List<Score> getByMoviesAndClient(String name, String email){
+        return repository.getScoreByMoviesAndClient(name, email);
+    }
+    public Boolean existsById(String id){
+        return repository.existsById(id);
     }
 
-    @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable("id") String id) {
-        service.delete(id);
+    public void deleteById(String id){
+        repository.deleteById(id);
+    }
+
+    public Score save(Score score){
+        return repository.save(score);
     }
 
 }
