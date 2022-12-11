@@ -8,5 +8,7 @@ import com.app.movie.entities.Score;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface IScoreRepository extends MongoRepository<Score, String> {
-    
+    @Query(value= "{moviesname  : ?0, clientemail : ?1}") // SQL Equivalent : SELECT * FROM Movie select * from Movie where name=?
+    List<Score> getScoreByMoviesAndClient(String name, String email);
+
 }
