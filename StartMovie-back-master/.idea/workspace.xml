@@ -4,24 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ecafec-0fcc-4130-898f-141d7a7f4a61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/entities/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/interfaces/IClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/interfaces/IClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/repository/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/repository/ClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/movie/controller/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/movie/controller/ClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/movie/entities/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/movie/entities/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/movie/interfaces/IClientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/movie/interfaces/IClientRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/movie/repository/ClientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/movie/repository/ClientRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/movie/service/ClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/movie/service/ClientService.class" afterDir="false" />
-    </list>
+    <list default="true" id="b7ecafec-0fcc-4130-898f-141d7a7f4a61" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -30,6 +24,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,12 +49,30 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/july/Documents/July/Curso MINTIC/Ciclo 4/Desarrollo Web/Proyectos/backend_equipo11/BACKEND-Ciclo-4-UNAB/StartMovie-back-master",
+    "last_opened_file_path": "C:/Users/LENOVO/Documents/MISION TIC/proyectos C4/Backend/BACKEND-Ciclo-4-UNAB/StartMovie-back-master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "e5b991934ea5931e064fe2137295e660"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MovieApplication">
+    <configuration name="MovieApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="StartMovie-back-master" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.app.movie.MovieApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MovieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="app-startmovie" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.app.movie.MovieApplication" />
@@ -76,6 +91,7 @@
       <updated>1670592217373</updated>
       <workItem from="1670592219641" duration="39000" />
       <workItem from="1670592299224" duration="1288000" />
+      <workItem from="1670719949118" duration="3192000" />
     </task>
     <servers />
   </component>

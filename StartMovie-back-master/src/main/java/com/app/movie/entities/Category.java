@@ -28,9 +28,7 @@ public class Category implements Serializable {
     private String description;
     private Integer ageMinimum;
     
-    //@OneToMany(cascade={CascadeType.PERSIST},mappedBy="category")
-    //@JsonIgnoreProperties("category")
-    //private List<Quadbike> quadbikes;
+
     
     
     
