@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ecafec-0fcc-4130-898f-141d7a7f4a61" name="Changes" comment="" />
+    <list default="true" id="b7ecafec-0fcc-4130-898f-141d7a7f4a61" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/entities/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/entities/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/entities/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/repository/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/repository/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/repository/ClientRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +61,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "e5b991934ea5931e064fe2137295e660"
+    "spring.configuration.checksum": "1177ff48d39996aa198188f4d1c5d2da"
   }
 }]]></component>
   <component name="RunDashboard">
@@ -91,7 +97,9 @@
       <updated>1670592217373</updated>
       <workItem from="1670592219641" duration="39000" />
       <workItem from="1670592299224" duration="1288000" />
-      <workItem from="1670719949118" duration="4590000" />
+      <workItem from="1670719949118" duration="6156000" />
+      <workItem from="1671029949950" duration="70000" />
+      <workItem from="1671031734834" duration="4099000" />
     </task>
     <servers />
   </component>
@@ -109,7 +117,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Client" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>

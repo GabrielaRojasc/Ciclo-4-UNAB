@@ -20,6 +20,8 @@ public class CategoryRepository {
     public Iterable<Category> getAll(){
         return repository.findAll();
     }
+
+
     
     public Optional<Category> findById(String id){
         Optional<Category> response= repository.findById(id);
