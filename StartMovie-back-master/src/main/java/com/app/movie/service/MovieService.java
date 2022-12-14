@@ -25,6 +25,10 @@ public class MovieService {
         Iterable<Movie> response = repository.getAll();
         return response;
     }
+    public Optional<Movie> getById(String id) {
+        Optional<Movie> response = repository.findById(id);
+        return response;
+    }
 
     public ResponseDto create(Movie request) {
         ResponseDto response = new ResponseDto();

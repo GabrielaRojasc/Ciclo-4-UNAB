@@ -1,7 +1,6 @@
 package com.app.movie.service;
-import com.app.movie.dto.AuthDto;
-import com.app.movie.dto.AuthResponseDto;
-import com.app.movie.dto.ReportClientDto;
+import com.app.movie.dto.AuthDTO;
+import com.app.movie.dto.AuthResponseDTO;
 import com.app.movie.entities.Client;
 import com.app.movie.repository.ClientRepository;
 import org.apache.tomcat.util.codec.binary.Base64;
@@ -21,8 +20,8 @@ public class AuthService {
 
     PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    public AuthResponseDto check(AuthDto request) {
-        AuthResponseDto response = new AuthResponseDto();
+    public AuthResponseDTO check(AuthDTO request) {
+        AuthResponseDTO response = new AuthResponseDTO();
         if (
                 request.user != null && !request.user.equals("") && request.password != null && !request.password.equals("")) {
             Optional<Client> client = checkCredential(request.user, request.password);
