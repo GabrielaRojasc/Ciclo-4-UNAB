@@ -11,7 +11,11 @@ import com.app.movie.repository.ClientRepository;
 
 import java.util.List;
 import java.util.Optional;
+
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
@@ -24,9 +28,22 @@ public class ClientService {
     @Autowired
     ClientRepository repository;
 
+    PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     public Iterable<Client> get() {
         Iterable<Client> response = repository.getAll();
         return response;
+    }
+
+    public Optional<Client> getByCredential(String credential) {
+        String pair = new String(Base64.decodeBase64(credential.substring(6)));
+        String email = pair.split(":")[0];
+        String pass = pair.split(":")[1];
+
+        Optional<Client> client = repository.findByEmail(email);
+        if(!matchPass(pass,client.get().getPassword())){
+            return null;
+        }
+        return client;
     }
 
     public ReportClientDto getReport() {
@@ -68,5 +85,13 @@ public class ClientService {
         repository.deleteById(id);
         Boolean deleted = true;
         return deleted;
+    }
+
+    private String encrypt(String pass){
+        return this.passwordEncoder.encode(pass);
+    }
+
+    private Boolean matchPass(String pass,String dbPass){
+        return this.passwordEncoder.matches(pass,dbPass);
     }
 }

@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/movie")
@@ -26,6 +28,10 @@ public class MovieController {
         return service.get();
     }
 
+    @GetMapping("/{id}")
+    public Optional<Movie> getById(@PathVariable("id") String id) {
+        return service.getById(id);
+    }
     @PostMapping("")
     public ResponseEntity<ResponseDto>  create(@RequestBody Movie request) {
         ResponseDto responseDto = service.create(request);
