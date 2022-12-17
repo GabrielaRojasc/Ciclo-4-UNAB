@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7ecafec-0fcc-4130-898f-141d7a7f4a61" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/MovieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/MovieApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/MovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/interfaces/IClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/interfaces/IClientRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/ScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/ScoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/app/movie/repository/ClientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/movie/repository/ClientRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +81,8 @@
       </method>
     </configuration>
     <configuration name="MovieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="app-startmovie" />
+      <option name="ACTIVE_PROFILES" />
+      <module name="StartMovie-back-master" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.app.movie.MovieApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,7 +102,9 @@
       <workItem from="1670719949118" duration="6156000" />
       <workItem from="1671029949950" duration="70000" />
       <workItem from="1671031734834" duration="4639000" />
-      <workItem from="1671045667692" duration="4811000" />
+      <workItem from="1671045667692" duration="5374000" />
+      <workItem from="1671233161762" duration="4296000" />
+      <workItem from="1671309658410" duration="2237000" />
     </task>
     <servers />
   </component>
