@@ -31,7 +31,12 @@ public class ScoreRepository {
 
     public List<Score> getByMoviesAndClient(String name, String email){
         return repository.getScoreByMoviesAndClient(name, email);
+        }
+    public List<Score> findByMovieAndClient(String movieId,String clientId){
+        List<Score> response= repository.getScoreByMovieAndClient(movieId,clientId);
+        return response;
     }
+
     public Boolean existsById(String id){
         return repository.existsById(id);
     }

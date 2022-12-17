@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7ecafec-0fcc-4130-898f-141d7a7f4a61" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app-startmovie.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/MovieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/MovieApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/MovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/ScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/ScoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/interfaces/IScoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/interfaces/IScoreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/repository/ScoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/repository/ScoreRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/ScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/ScoreService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +101,8 @@
       <workItem from="1670719949118" duration="6156000" />
       <workItem from="1671029949950" duration="70000" />
       <workItem from="1671031734834" duration="4639000" />
-      <workItem from="1671045667692" duration="4811000" />
+      <workItem from="1671045667692" duration="5374000" />
+      <workItem from="1671233161762" duration="3954000" />
     </task>
     <servers />
   </component>

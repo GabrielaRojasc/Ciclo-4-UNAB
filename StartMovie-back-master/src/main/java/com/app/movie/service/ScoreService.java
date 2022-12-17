@@ -40,8 +40,22 @@ public class ScoreService {
         Iterable<Score> response = repository.getAll();
         return response;
     }
+    public Score check(String movieId,String authorization) {
 
-    public ResponseDto create(Score request) {
+        Score score = new Score();
+        Optional<Movie> movie = movieRepository.findById(movieId);
+        Optional<Client> client = clientService.getByCredential(authorization);
+        if(movie.isPresent() && client.isPresent()){
+            List<Score> scores = repository.findByMovieAndClient(movie.get().getId(),client.get().getId());
+            if(scores.size()>0){
+                score = scores.get(scores.size()-1);
+            }
+        }
+
+        return score;
+    }
+
+    public ResponseDto created(Score request) {
         ResponseDto response = new ResponseDto();
         List<Score> scoresClientandMovie = repository.getByMoviesAndClient(request.getMovie().getName(), request.getClient().getEmail());
 
@@ -66,7 +80,7 @@ public class ScoreService {
 
     }
 
-    public ResponseDto created(ScoreDto request, String authorization) {
+    public ResponseDto create(ScoreDto request, String authorization) {
         ResponseDto response = new ResponseDto();
         response.status=false;
         if(request.score<0 || request.score>5){
@@ -91,16 +105,23 @@ public class ScoreService {
     }
 
 
-    public Score update(Score score) {
-        Score scoreToUpdate = new Score();
+    public ResponseDto update(Score score, String id) {
 
-        Optional<Score> currentScore = repository.findById(score.getId());
+        ResponseDto response = new ResponseDto();
+        Optional<Score> currentScore = repository.findById(scoreId);
         if (!currentScore.isEmpty()) {
-            scoreToUpdate = score;
-            scoreToUpdate=repository.save(scoreToUpdate);
+            Score scoreToUpdate = new Score();
+            scoreToUpdate = currentScore.get();
+            scoreToUpdate.setScore(score.getScore());
+            repository.save(scoreToUpdate);
+            response.status=true;
+            response.message="Se actualizó correctamente";
+            response.id=scoreId;
+        }else{
+            response.status=false;
+            response.message="No se logró la actualización";
         }
-        return scoreToUpdate;
-
+        return response;
     }
 
 

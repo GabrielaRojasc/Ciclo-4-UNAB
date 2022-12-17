@@ -13,4 +13,6 @@ public interface IScoreRepository extends MongoRepository<Score, String> {
     @Query(value= "{moviesname  : ?0, clientemail : ?1}") // SQL Equivalent : SELECT * FROM Movie select * from Movie where name=?
     List<Score> getScoreByMoviesAndClient(String name, String email);
 
+   @Query(value= "{$and:[{'movie.id' : ?0},{'client.id':?1}]}") // SQL Equivalent : SELECT * FROM Movie select * from Movie where name=?
+   List<Score> getScoreByMovieAndClient(String movieId,String clientId);
 }
