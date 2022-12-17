@@ -90,7 +90,6 @@ public class ScoreService {
             Optional<Movie> movie = movieRepository.findById(request.movieId);
             Optional<Client> client = clientService.getByCredential(authorization);
             if(movie.isPresent() && client.isPresent()){
-                //realizar validación de si ya existe la calificación...
                 score.setState("activo");
                 score.setScore(request.score);
                 score.setMovie(movie.get());
@@ -105,10 +104,10 @@ public class ScoreService {
     }
 
 
-    public ResponseDto update(Score score, String id) {
+    public ResponseDto update(Score score, String ScoreId) {
 
         ResponseDto response = new ResponseDto();
-        Optional<Score> currentScore = repository.findById(scoreId);
+        Optional<Score> currentScore = repository.findById(ScoreId);
         if (!currentScore.isEmpty()) {
             Score scoreToUpdate = new Score();
             scoreToUpdate = currentScore.get();
@@ -116,7 +115,7 @@ public class ScoreService {
             repository.save(scoreToUpdate);
             response.status=true;
             response.message="Se actualizó correctamente";
-            response.id=scoreId;
+            response.id=ScoreId;
         }else{
             response.status=false;
             response.message="No se logró la actualización";
