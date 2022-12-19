@@ -44,6 +44,33 @@ public class CategoryService {
         return categories;
     }
 
+    public Iterable<Movie> getCategoriesByName(String nameCategory ) {
+        Iterable<Movie> response;
+
+        Iterable<Movie> movies = movieRepository.findAll();
+        List<Category> categories = new ArrayList<>();
+        List<Movie> MovieCategory = new ArrayList();
+        for (Movie movie : movies) {
+            if (movie.getCategories() != null) {
+                for (Category cat : movie.getCategories()) {
+                    if (!categories.stream().anyMatch(x -> x.getName().equals(cat.getName())) && cat.getName().equals(nameCategory) ){
+                        Movie mov = new Movie();
+                        mov.setId(movie.getId());
+                        mov.setName(movie.getName());
+                        mov.setTrailerLink(movie.getTrailerLink());
+                        mov.setImageLink(movie.getImageLink());
+                        mov.setDescription(movie.getDescription());
+                        mov.setCategories(movie.getCategories());
+                        mov.setStaffList(movie.getStaffList());
+                        MovieCategory.add(mov);
+                    }
+                }
+            }
+        }
+        return MovieCategory;
+    }
+
+
     public ResponseDto create(Category request) {
 
         Category newCategory = repository.save(request);

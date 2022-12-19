@@ -6,6 +6,7 @@ package com.app.movie.controller;
 
 import com.app.movie.dto.ResponseDto;
 import com.app.movie.entities.Category;
+import com.app.movie.entities.Movie;
 import com.app.movie.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,6 +33,12 @@ public class CategoryController {
     @GetMapping("")
     public Iterable<Category> get() {
         Iterable<Category> response = service.get();
+        return response;
+    }
+
+    @GetMapping("/{name}")
+    public Iterable<Movie> getCategoriesByName(@PathVariable("name") String name) {
+        Iterable<Movie> response = service.getCategoriesByName(name);
         return response;
     }
 
