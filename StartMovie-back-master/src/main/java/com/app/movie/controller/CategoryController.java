@@ -35,6 +35,17 @@ public class CategoryController {
         Iterable<Category> response = service.get();
         return response;
     }
+    @GetMapping("/all")
+    public Iterable<Category> getAll() {
+        Iterable<Category> response = service.getAll();
+        return response;
+    }
+
+    @GetMapping("/movie")
+    public Iterable<Category> getByMovies() {
+        Iterable<Category> response = service.getByMovies();
+        return response;
+    }
 
     @GetMapping("/{name}")
     public Iterable<Movie> getCategoriesByName(@PathVariable("name") String name) {

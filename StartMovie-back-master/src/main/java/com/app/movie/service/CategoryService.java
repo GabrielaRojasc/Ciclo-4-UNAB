@@ -23,6 +23,34 @@ public class CategoryService {
 
     @Autowired
     IMovieRepository movieRepository;
+
+    // gets añadidos por el profesor ultima clase //
+    public Iterable<Category> getAll() {
+        Iterable<Category> categories = repository.findAll();
+        return categories;
+    }
+
+    public Iterable<Category> getByMovies() {
+        Iterable<Category> response;
+
+        Iterable<Movie> movies = movieRepository.findAll();
+        List<Category> categories = new ArrayList<>();
+        for (Movie movie: movies) {
+            if(movie.getCategories()!=null){
+                for (Category cat:movie.getCategories()) {
+                    if(!categories.stream().anyMatch(x->x.getName().equals(cat.getName()))){
+                        Category currentCategory= new Category();
+                        currentCategory.setName(cat.getName());
+                        currentCategory.setDescription(cat.getDescription());
+                        currentCategory.setAgeMinimum(cat.getAgeMinimum());
+                        categories.add(currentCategory);
+                    }
+                }
+            }
+        }
+
+        return categories;
+    }
     public Iterable<Category> get() {
         Iterable<Category> response;
 
