@@ -46,8 +46,8 @@ public class ClientService {
         return client;
     }
 
-    public ReportClientDto getReport() {
-        Optional<Client> client = repository.findById("");
+    public ReportClientDto getReport(String id) {
+        Optional<Client> client = repository.findById(id);
         ReportClientDto reportClientDto= new ReportClientDto();
         reportClientDto.birthDate=client.get().getBirthDate();
         reportClientDto.email=client.get().getEmail();
@@ -62,6 +62,7 @@ public class ClientService {
             response.status = false;
             response.message = CLIENT_REGISTERED;
         }else{
+            request.setPassword(encrypt(request.getPassword()));
             repository.save(request);
             response.status = true;
             response.message = CLIENT_SUCCESS;
@@ -74,7 +75,8 @@ public class ClientService {
         Client clientToUpdate = new Client();
 
         Optional<Client> currentClient = repository.findById(client.getId());
-        if (!currentClient.isEmpty()) {            
+        if (!currentClient.isEmpty()) {
+            client.setPassword(encrypt(client.getPassword()));
             clientToUpdate = client;
             clientToUpdate=repository.save(clientToUpdate);
         }

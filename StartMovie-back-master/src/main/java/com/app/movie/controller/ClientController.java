@@ -36,9 +36,9 @@ public class ClientController {
         return service.get();
     }
 
-    @GetMapping("/report")
-    public ReportClientDto getReport() {
-        return service.getReport();
+    @GetMapping("/report/{id}")
+    public ReportClientDto getReport(@PathVariable("id") String id) {
+        return service.getReport(id);
     }
 
     @PostMapping("")
