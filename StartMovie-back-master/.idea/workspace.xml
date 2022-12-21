@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b7ecafec-0fcc-4130-898f-141d7a7f4a61" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/MovieService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/app/movie/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/movie/controller/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/app/movie/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/movie/service/CategoryService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +43,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2Ig9AaK7qcQv5TXS2yNJSwlaVc6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,6 +68,15 @@
     &quot;spring.configuration.checksum&quot;: &quot;1177ff48d39996aa198188f4d1c5d2da&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.app.movie.repository" />
+      <recent name="com.app.movie.interfaces" />
+      <recent name="com.app.movie.entities" />
+      <recent name="com.app.movie.dto" />
+      <recent name="com.app.movie.controller" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -110,7 +119,10 @@
       <workItem from="1671309658410" duration="3171000" />
       <workItem from="1671466921153" duration="4657000" />
       <workItem from="1671547057078" duration="258000" />
-      <workItem from="1671551236128" duration="3677000" />
+      <workItem from="1671551236128" duration="6000000" />
+      <workItem from="1671586784777" duration="1921000" />
+      <workItem from="1671631337662" duration="1139000" />
+      <workItem from="1671663561887" duration="2311000" />
     </task>
     <servers />
   </component>
