@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b7ecafec-0fcc-4130-898f-141d7a7f4a61" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/movie/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/movie/controller/CategoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/movie/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/movie/service/CategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/FavoriteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/controller/FavoriteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/dto/FavoriteDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/dto/FavoriteDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/repository/FavoriteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/repository/FavoriteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/movie/service/FavoriteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/movie/service/FavoriteService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +124,8 @@
       <workItem from="1671551236128" duration="6000000" />
       <workItem from="1671586784777" duration="1921000" />
       <workItem from="1671631337662" duration="1139000" />
-      <workItem from="1671663561887" duration="2311000" />
+      <workItem from="1671663561887" duration="2976000" />
+      <workItem from="1671667349193" duration="9491000" />
     </task>
     <servers />
   </component>
@@ -149,6 +152,16 @@
             </State>
           </value>
         </entry>
+        <entry key="dc017272-8528-435c-a563-454ed37ce2b0">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="dc017272-8528-435c-a563-454ed37ce2b0" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>

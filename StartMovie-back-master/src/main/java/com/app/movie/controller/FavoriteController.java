@@ -1,9 +1,9 @@
 package com.app.movie.controller;
 
+import com.app.movie.dto.FavoriteDto;
 import com.app.movie.dto.ResponseDto;
-import com.app.movie.dto.ScoreDto;
-import com.app.movie.entities.Score;
-import com.app.movie.service.ScoreService;
+import com.app.movie.entities.Favorite;
+import com.app.movie.service.FavoriteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,14 +15,19 @@ import org.springframework.web.bind.annotation.*;
 public class FavoriteController {
 
     @Autowired
-    ScoreService service;
+    FavoriteService service;
 
     @GetMapping("")
-    public Iterable<Score> get() {
-        return service.get();
+    public Iterable<Favorite> getAll() {
+        return service.getAll();
     }
+    @GetMapping("/{idclient}/{idMovie}")
+    public FavoriteDto get(@PathVariable("idclient") String idclient , @PathVariable("idMovie") String idMovie ) {
+        return service.get(idclient,idMovie);
+    }
+
     @GetMapping("/check/{movieId}")
-    public Score check(@PathVariable("movieId") String movieId,@RequestHeader(value="authorization") String authorization) {
+    public Favorite check(@PathVariable("movieId") String movieId,@RequestHeader(value="authorization") String authorization) {
         return service.check(movieId,authorization);
     }
 
@@ -31,12 +36,20 @@ public class FavoriteController {
 //    public ResponseDto create(@RequestBody Score request) {
 //       return service.create(request);
 //    }
-
+/*
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseDto create(@RequestBody ScoreDto request, @RequestHeader(value="authorization") String authorization) {
+    public ResponseDto create(@RequestBody FavoriteDto request, @RequestHeader(value="authorization") String authorization) {
         return service.create(request,authorization);
+   }
+
+ */
+    @PostMapping("")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseDto create(@RequestBody Favorite request) {
+        return service.create(request);
     }
+
    // @PostMapping("")
  //   @ResponseStatus(HttpStatus.CREATED)
  //   public ResponseEntity<ResponseDto> create(@RequestBody Score request) {
@@ -49,13 +62,13 @@ public class FavoriteController {
   //      return responseS;
   //  }
 
-
+/*
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public ResponseDto update(@PathVariable("id") String id,@RequestBody Score request) {
         return service.update(request,id);
     }
-
+*/
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("id") String id) {

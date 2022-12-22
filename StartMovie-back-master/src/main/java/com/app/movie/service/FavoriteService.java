@@ -1,10 +1,9 @@
 package com.app.movie.service;
 
 import com.app.movie.dto.FavoriteDto;
+import com.app.movie.dto.ReportClientDto;
 import com.app.movie.dto.ResponseDto;
-import com.app.movie.entities.Client;
-import com.app.movie.entities.Favorite;
-import com.app.movie.entities.Movie;
+import com.app.movie.entities.*;
 import com.app.movie.repository.ClientRepository;
 import com.app.movie.repository.FavoriteRepository;
 import com.app.movie.repository.MovieRepository;
@@ -17,12 +16,13 @@ import java.util.Optional;
 @Service
 public class FavoriteService {
 
-    private final String MyFavorites_REGISTERED="Movie no guardada";
-    private final String MyFavorites_SUCCESS="Movie guardada correctamente";
+    private final String Favorite_REGISTERED = "Movie no guardada";
+    private final String Favorite_SUCCESS = "Movie guardada correctamente";
 
 
     @Autowired
     FavoriteRepository repository;
+
     @Autowired
     ClientService clientService;
     @Autowired
@@ -30,19 +30,20 @@ public class FavoriteService {
     @Autowired
     ClientRepository clientRepository;
 
-    public Iterable<Favorite> get() {
+    public Iterable<Favorite> getAll() {
         Iterable<Favorite> response = repository.getAll();
         return response;
     }
-    public Favorite check(String movieId,String authorization) {
+
+    public Favorite check(String movieId, String authorization) {
 
         Favorite MyFavorites = new Favorite();
         Optional<Movie> movie = movieRepository.findById(movieId);
         Optional<Client> client = clientService.getByCredential(authorization);
-        if(movie.isPresent() && client.isPresent()){
-            List<Favorite> MyFavoritess = repository.findByMovieAndClient(movie.get().getId(),client.get().getId());
-            if(MyFavoritess.size()>0){
-                MyFavorites = MyFavoritess.get(MyFavoritess.size()-1);
+        if (movie.isPresent() && client.isPresent()) {
+            List<Favorite> MyFavoritess = repository.findByMovieAndClient(movie.get().getId(), client.get().getId());
+            if (MyFavoritess.size() > 0) {
+                MyFavorites = MyFavoritess.get(MyFavoritess.size() - 1);
             }
         }
 
@@ -50,31 +51,53 @@ public class FavoriteService {
     }
 
 
-    public ResponseDto created (Favorite request) {
-        ResponseDto response = new ResponseDto();
-        List<Favorite> MyFavoritessClientandMovie = repository.getByMoviesAndClient(request.getMovie().getName(), request.getClient().getEmail());
+    public ResponseDto create(Favorite request) {
+        Favorite newFavorite = repository.save(request);
+        ResponseDto responseDto = new ResponseDto();
+        responseDto.status = true;
+        responseDto.message = "movie añadida a la lista correctamente";
+        responseDto.id = newFavorite.getId();
+        return responseDto;
 
-        if (MyFavoritessClientandMovie != null) {
-            response.status = false;
-            response.message = MyFavorites_REGISTERED;
-
-        } else {
-            repository.save(request);
-            response.status = true;
-            response.message = MyFavorites_SUCCESS;
-            response.id = request.getId();
-        }
     }
 
-        public Iterable<Movie> getMyFavoritesByName () {
-            Iterable<Movie> responseMovies;
+    public FavoriteDto get(String idclient, String idMovie) {
+        FavoriteDto reporte = new FavoriteDto();
+        Iterable<Favorite> favoritee = repository.getAll();
+        for (Favorite favorite : favoritee) {
+            if ( favorite.getClient().equals(idclient)) {
+                Optional<Movie> movie = movieRepository.findById(idMovie);
+                reporte.movieId = movie.get().getId();
+                reporte.movieName = movie.get().getName();
+                reporte.movieDescipcion = movie.get().getDescription();
+                reporte.movieImagen = movie.get().getImageLink();
+                reporte.movieTrailer = movie.get().getTrailerLink();
+                reporte.movieCategory = movie.get().getCategories();
+                reporte.moviestaffList = movie.get().getStaffList();
 
-            Iterable<Movie> movies = movieRepository.getAll();
-            List<Favorite> favorites = new ArrayList<>();
-            List<Movie> MovieFavorites = new ArrayList<>();
-            for (Movie movie : movies) {
-                if (movie.getName() != null) {
-                    for (Favorite favo : favorite ) {
+            }
+        }
+        return reporte;
+    }
+    public Boolean delete(String id) {
+        repository.deleteById(id);
+        Boolean deleted = true;
+        return deleted;
+    }
+}
+
+ /*
+
+    public Iterable<Favorite> gettt(String idClient) {
+        Iterable<Favorite> response;
+
+        Iterable<Favorite> favoritee = repository.getAll();
+        List<Movie> movie = new ArrayList<>();
+        List<Favorite> fav = new ArrayList();
+        for (Favorite favorite : favoritee) {
+            if (favorite.getClient() != null && favorite.getMovie() != null ) {
+                for ( Movie cat : favorite.getMovie()) {
+
                         Movie mov = new Movie();
                         mov.setId(movie.getId());
                         mov.setName(movie.getName());
@@ -83,22 +106,20 @@ public class FavoriteService {
                         mov.setDescription(movie.getDescription());
                         mov.setCategories(movie.getCategories());
                         mov.setStaffList(movie.getStaffList());
-                        MovieFavorites.add(mov);
-
+                        Moviesfavorites.add(mov);;
                     }
                 }
             }
-            return MovieFavorites;
+            return Moviesfavorites;
         }
-    public Boolean delete(String id) {
-        repository.deleteById(id);
-        Boolean deleted = true;
-        return deleted;
+
     }
 
-        public ResponseDto create(FavoriteDto request, String authorization) {
-            ResponseDto response = new ResponseDto();
-            response.status=false;
+
+
+    public ResponseDto createFront (FavoriteDto request, String authorization) {
+        ResponseDto response = new ResponseDto();
+        response.status=false;
 
                 Favorite MyFavorites = new Favorite();
                 Optional<Movie> movie = movieRepository.findById(request.movieId);
@@ -117,35 +138,8 @@ public class FavoriteService {
             return response;
         }
 
-    /*
-        public ResponseDto update(MyFavorites myFavorites, String MyFavoritesId) {
-
-            ResponseDto response = new ResponseDto();
-            Optional<MyFavorites> currentMyFavorites = repository.findById(MyFavoritesId);
-            if (!currentMyFavorites.isEmpty()) {
-                MyFavorites MyFavoritesToUpdate = new MyFavorites();
-                MyFavoritesToUpdate = currentMyFavorites.get();
-                MyFavoritesToUpdate.setMyFavorites(MyFavorites.getMyFavorites());
-                repository.save(MyFavoritesToUpdate);
-                response.status=true;
-                response.message="Se actualizó correctamente";
-                response.id=MyFavoritesId;
-            }else{
-                response.status=false;
-                response.message="No se logró la actualización";
-            }
-            return response;
-        }
-
-    */
-
-    // if (MyFavoritessClientandMovie.size()>0){
-//         response.status=false;
-//         response.message=MyFavorites_ERROR;
-
-    //      return response;
-    // }
 
 
 
 }
+*/

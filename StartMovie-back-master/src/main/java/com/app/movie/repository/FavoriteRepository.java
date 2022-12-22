@@ -6,6 +6,7 @@ package com.app.movie.repository;
 
 
 import com.app.movie.entities.Favorite;
+import com.app.movie.entities.Movie;
 import com.app.movie.interfaces.IFavoriteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -48,5 +49,7 @@ public class FavoriteRepository {
     public Favorite save(Favorite favorite){
         return repository.save(favorite);
     }
+
+
 
 }
